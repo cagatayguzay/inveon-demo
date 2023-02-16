@@ -28,6 +28,38 @@
     border-radius: 50%;
 }
 
+.menu-relative{
+    position: relative;
+}
+
+.cart-menu-div{
+    position: absolute;
+    left: -40px;
+    display: none;
+}
+
+.category-title{
+    margin-bottom: 0px;
+    padding: 20px;
+}
+
+.cart-menu-div div{
+    padding: 10px;
+    background: #fff;
+    width: 150px;
+    height: auto;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border-radius: 12px;
+}
+
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card a{
+    text-decoration: none;
+}
+
 .card .card-img-top{
     height: 240px;
     object-fit: cover;
@@ -35,6 +67,7 @@
 
 .card-body{
     text-align: start;
+    position: relative;
 }
 
 .card-title{
@@ -43,7 +76,22 @@
     width: 100%;
     display: block;
     margin-bottom: 0px;
+    display: inline-block;
+    width: 245px;
+    overflow: hidden;
 }
+
+.card-price{
+    position: absolute;
+    top: 17px;
+    right: 10px;
+}
+
+.card-price .current-price{
+    color: green;
+    font-weight: 600;
+}
+
 
 .card-title:hover{
     color: unset;

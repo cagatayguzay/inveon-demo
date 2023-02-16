@@ -49,8 +49,8 @@
         </header>
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
-            <div class="container">
-                <!-- <div class="row">
+            <div class="container-fluid">
+                <div class="row">
                     <div class="col-5 col-lg-3">
                          <div>
                             <button id="getData" class="btn btn-primary">Data Getir</button>
@@ -60,7 +60,7 @@
                         <div class="row">
                             <div class="col-12 col-lg-4">
                                 <div class="card">
-                                    <img class="card-img-top" src="https://picsum.photos/id/1/200/300" alt="product_img">
+                                    <img class="card-img-top" src="https://picsum.photos/id/1/200/300" alt="Card image cap">
                                     <div class="card-body">
                                         <a href="##" class="card-title">ABMX Eien Xyzen 5 3100</a>
                                         <span class="sku">SKU: G-HS-119</span>
@@ -112,10 +112,6 @@
                             </div>
                         </div>
                     </div>
-                </div> -->
-
-                <div class="row" id="productRow">
- 
                 </div>
                 
             </div>
@@ -160,124 +156,8 @@
 
         <script>
             $(document).ready(function () {
-                $('.menu-relative').hover(function () {
-                        // over
-                        $('.cart-menu-div').fadeIn();
-                    }, function () {
-                        // out
-                        $('.cart-menu-div').fadeOut();
-                    }
-                );
-                    
-
-                var computerData = 
-                [
-                    {
-                        id : 3,
-                        title : "ABMX Eien Xyzen 5 3100",
-                        sku : "SKU: G-HS-119",
-                        money : 500,
-                        src : "https://picsum.photos/id/1/200/300",
-                        info : {
-                            "1" : "x5 3100f Gaming",
-                            "2" : "CMP k7500 Gaming",
-                            "3" : "KJH Gaming Services",
-                        }
-                    },
-                    {
-                        id : 7,
-                        title : "LKS Loray Avidia 7x 8900k",
-                        sku : "SKU: G-HS-120",
-                        money : 900,
-                        src : "https://picsum.photos/id/2/200/300",
-                        info : {
-                            "1" : "7x 8900k Gaming",
-                            "2" : "LKS Avidia 7500 Gaming",
-                            "3" : "CMP Gaming Services",
-                        }
-                    },
-                    {
-                        id : 11,
-                        title : "OPM Kulzy AMP 2 2200X",
-                        sku : "SKU: G-HS-121",
-                        money : 320,
-                        src : "https://picsum.photos/id/0/200/300",
-                        info : {
-                            "1" : "2 2200x Gaming",
-                            "2" : "VCV AMP 1650S Gaming",
-                            "3" : "MNM Gaming Services",
-                        }
-                    }
-                ]
-                // console.log(computers);
-                // var jsonData=JSON.stringify(computers);
-                // var computerData=JSON.parse(jsonData);
-
-                // console.log(computerData);
-
-                for (let i = 0; i < computerData.length; ++i) {
-                    // do something with `substr[i]`
-                    // console.log(computerData[i]);
-                    $(  '<div class="col-lg-4">'+
-                            '<div class="card" data-id="'+ computerData[i]['id'] +'">'+ 
-                                '<img class="card-img-top" src="'+ computerData[i]['src'] +'" alt="product_img">'+
-                                '<div class="card-body">'+
-                                    '<a href="##" class="card-title">'+ computerData[i]['title'] +'</a>'+
-                                    '<span class="sku">'+ computerData[i]['sku'] +'</span>'+
-                                    '<div class="card-price">'+
-                                        '<div class="current-price">$'+ computerData[i]['money'] +'</div>'+
-                                    '</div>'+
-                                    '<div>'+
-                                        '<ul class="computer-featured-list">'+
-                                            '<li>'+
-                                                '<div class="computer-info-list">'+
-                                                    '<div>CPU/Processor:</div>'+
-                                                    '<div>'+ computerData[i]['info'][1] +'</div>'+
-                                                '</div>'+
-                                            '</li>'+
-                                            '<li>'+
-                                                '<div class="computer-info-list">'+
-                                                    '<div>Video Graphics Card:</div>'+
-                                                    '<div>'+ computerData[i]['info'][2] +'</div>'+
-                                                '</div>'+
-                                            '</li>'+
-                                            '<li>'+
-                                                '<div class="computer-info-list">'+
-                                                    '<div>Powered by:</div>'+
-                                                    '<div>'+ computerData[i]['info'][3] +'</div>'+
-                                                '</div>'+
-                                            '</li>'+
-                                        '</ul>'+
-                                    '</div>'+
-                                    '<div class="text-center"><button class="btn btn-primary card-add-btn" data-id="'+ computerData[i]['id'] +'"><i class="fa-solid fa-cart-plus"></i> Add Cart</button></div>'+
-                                '</div>'+
-                            '</div>'+
-                        '</div>').appendTo('#productRow');
-                }
-
-
-                var globalCart = [];
-                $('.card-add-btn').click(function (e) { 
-                    e.preventDefault();
-
-                    var selectItem = $(this).data('id');
-                    var searchResult = computerData.find(p=> p.id == selectItem);
-                    globalCart.push(searchResult);
-
-                    window.localStorage.setItem("globalCart", JSON.stringify(globalCart));
-                    var retrievedObject = localStorage.getItem('globalCart');
-                    console.log('cartStorage: ', JSON.parse(retrievedObject));
-
-                    // console.log(localStorageData);
-                });
-
-
-                $('#getData').click(function (e) { 
-                    e.preventDefault();
-
-                    localStorage.setItem("name", "Jack Sparrow");
-                    console.log(localStorage.getItem("name"));
-                });
+                var retrievedObject = localStorage.getItem('globalCart');
+                console.log('r: ', JSON.parse(retrievedObject));
             });
         </script>
     </body>
