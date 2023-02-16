@@ -1,0 +1,106 @@
+.sticky-top{
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+}
+
+.box-shadow-d{
+    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+}
+
+.navbar-brand span:nth-child(1){
+    background-color: #000;
+    color: white;
+    border: 1px solid #000;
+    border-radius:4px 0px 0px 4px;
+    padding-left: 4px;
+    font-size: 25px;
+}
+
+.navbar-brand span:nth-child(2){
+    border:1px solid #000;
+    padding-right: 4px;
+    border-radius: 0px 4px 4px 0px;
+    font-size: 25px;
+}
+
+.border-r-50{
+    border-radius: 50%;
+}
+
+.card .card-img-top{
+    height: 240px;
+    object-fit: cover;
+}
+
+.card-body{
+    text-align: start;
+}
+
+.card-title{
+    color: #222;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    margin-bottom: 0px;
+}
+
+.card-title:hover{
+    color: unset;
+}
+
+.card .sku{
+    display: block;
+    font-size: 11px;
+    color: #555555b0;
+    margin-bottom: 20px;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card:hover .card-title{
+    text-decoration: underline;
+}
+
+.card ul{
+    font-size: 13px;
+}
+
+.computer-info-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.computer-info-list div:nth-child(1){
+    color: #999;
+    font-weight: 600;
+}
+
+.computer-info-list div:nth-child(2){
+    color: #666;
+    padding-left: 10px;
+}
+
+.computer-featured-list{
+    list-style: none;
+    padding-left: 0px;
+}
+
+.computer-featured-list li{
+    display: flex;
+}
+
+.computer-featured-list li::before {
+    content: "• ";
+    color: #58d4dd;
+    padding-right: 10px;
+}
+
+.card-add-btn{
+    padding: 5px;
+    border-radius: 0px;
+}
