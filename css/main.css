@@ -34,8 +34,8 @@
 
 .cart-menu-div{
     position: absolute;
-    left: -40px;
-    display: none;
+    left: -150px;
+    display: block;
 }
 
 .category-title{
@@ -43,13 +43,54 @@
     padding: 20px;
 }
 
-.cart-menu-div div{
+.cart-menu-div .cart-menu-short{
     padding: 10px;
     background: #fff;
-    width: 150px;
+    width: 350px;
     height: auto;
     box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
     border-radius: 12px;
+}
+
+.cart-menu-product{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.cart-menu-product-trash button{
+    padding: 0px;
+    border: 0px;
+}
+
+.cart-menu-product-trash i{
+    color:red;
+}
+
+.cart-menu-product-trash i:hover{
+    color:rgba(255, 0, 0, 0.493);
+}
+
+.cart-menu-product-img img{
+    width: 50px;
+    height: 50px;
+}
+
+.cart-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-link span{
+    font-weight: 600;
+}
+
+.cart-link .btn-dark{
+    padding: 7px;
+    border-radius: 0px;
 }
 
 .card:hover{
@@ -62,7 +103,13 @@
 
 .card .card-img-top{
     height: 240px;
-    object-fit: cover;
+    object-fit: contain;
+}
+
+@media screen and (max-width:900px) {
+    .responsive-mb{
+        margin-bottom: 20px;
+    }
 }
 
 .card-body{
@@ -90,6 +137,22 @@
 .card-price .current-price{
     color: green;
     font-weight: 600;
+}
+
+.card-price .discount-price{
+    color: green;
+    font-weight: 600;
+}
+
+.text-discount{
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    color: red !important;
+}
+
+.save-price{
+    font-size: 11px;
+    font-style: italic;
 }
 
 

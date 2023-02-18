@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Catalog Page</title>
+        <title>Lorem Ipsum | Category Page</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -26,9 +26,29 @@
                 <div class="menu-relative">
                     <button class="btn btn-outline-secondary rounded-0"> <i class="fa-solid fa-cart-shopping"></i> <span id="productCount">0</span></button>
                     <div class="cart-menu-div">
-                        <div>
-                            Empty
+                        <div class="cart-menu-short">
+                            <div class="cart-menu-product">
+                                <div class="cart-menu-product-img">
+                                    <img class="img-fluid" src="assets/product-images/11/1.webp" alt="">
+                                </div>
+                                <div class="cart-menu-product-name">
+                                    ABMX Eien Xyzen 5 3100
+                                </div>
+                                <div class="cart-menu-product-count">
+                                    1 item
+                                </div>
+                                <div class="cart-menu-product-trash">
+                                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="cart-link">
+                                <span>Total $450</span> <a href="" class="btn btn-dark">Checkout <i class="fa-solid fa-square-up-right"></i></a>
+                            </div>
                         </div>
+                        <!-- <div class="cart-menu-empty">
+                            Empty
+                        </div> -->
                     </div>
                 </div>
                 
@@ -66,7 +86,10 @@
                                         <span class="sku">SKU: G-HS-119</span>
                                         <div class="card-price">
                                             <div class="current-price">
-                                                $500
+                                                $900
+                                            </div>
+                                            <div class="discount-price">
+                                                $810
                                             </div>
                                         </div>
                                         <div>
@@ -162,7 +185,6 @@
 
         <script>
             $(document).ready(function () {
-                localStorage.clear();
 
                 $('.menu-relative').hover(function () {
                         // over
@@ -175,14 +197,16 @@
                     
 
                 for (let i = 0; i < productsData.length; ++i) {
-                    $(  '<div class="col-lg-4">'+
+                    $(  '<div class="col-12 col-lg-4 responsive-mb">'+
                             '<div class="card" data-id="'+ productsData[i]['id'] +'">'+ 
-                                '<img class="card-img-top" src="'+ productsData[i]['src'] +'" alt="product_img">'+
+                                '<img class="card-img-top" src="'+ productsData[i]['productImages'][1] +'" alt="product_img">'+
                                 '<div class="card-body">'+
                                     '<a href="##" class="card-title">'+ productsData[i]['title'] +'</a>'+
                                     '<span class="sku">'+ productsData[i]['sku'] +'</span>'+
                                     '<div class="card-price">'+
-                                        '<div class="current-price">$'+ productsData[i]['money'] +'</div>'+
+                                        '<div class="current-price '+ (productsData[i]['discount'] > 0 ? 'text-discount' : "" ) +'">$'+ productsData[i]['money'] +'</div>'+
+                                        (productsData[i]['discount'] > 0 ? '<div class="save-price">save %'+ productsData[i]['discount'] +'</div>': '') +
+                                        (productsData[i]['discount'] > 0 ? '<div class="discount-price">$'+ (productsData[i]['money'] - ((productsData[i]['money']*productsData[i]['discount'])/100)) +'</div>': '') +
                                     '</div>'+
                                     '<div>'+
                                         '<ul class="computer-featured-list">'+
@@ -234,7 +258,7 @@
 
                     var selectItem = $(this).data('id');
                     var searchResult = productsData.find(p=> p.id == selectItem);
-                    ++retrievedObjectParse.length;
+                    // ++retrievedObjectParse.length;
                     setCart(searchResult);
                     // console.log(retrievedObjectParse);
                 });

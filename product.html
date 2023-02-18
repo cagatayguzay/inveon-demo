@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Catalog Page</title>
+        <title>Lorem Ipsum | Product Page</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -17,6 +17,10 @@
         <link href="css/styles.css" rel="stylesheet" />
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/product.css">
+
+        <!-- Slider CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.css" integrity="sha512-HWY8i77pPLL23sU4pHj+5iuZEmmmu2YaiTUcWrBXqBRTpn6yUdDvlFGNmG0qyjDg/vpt+YWNMASjg9M0eOU9DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <!-- Navigation-->
@@ -47,6 +51,115 @@
                 </div>
             </div>
         </header>
+
+        <section class="container mt-2">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <!-- Place somewhere in the <body> of your page -->
+                    <div id="slider" class="flexslider main-image">
+                        <ul class="slides">
+                            <li>
+                                <img src="assets/product-images/3/1.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/2.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/3.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/4.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/5.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/6.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/7.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/8.webp" />
+                            </li>
+                            <!-- items mirrored twice, total of 12 -->
+                        </ul>
+                    </div>
+                    <div id="carousel" class="flexslider thumbnail-image">
+                        <ul class="slides">
+                            <li>
+                                <img src="assets/product-images/3/1.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/2.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/3.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/4.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/5.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/6.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/7.webp" />
+                            </li>
+                            <li>
+                                <img src="assets/product-images/3/8.webp" />
+                            </li>
+                        <!-- items mirrored twice, total of 12 -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card product-card">
+                        <div class="card-header">
+                            <h4>ABMX Eien Xyzen 5 3100</h4>
+                            <div class="product-price">
+                                <p class="current-price text-discount">$500</p>
+                                <p class="save-price mb-0">save %10</p>
+                                <p class="discount-price">$450</p>
+                            </div>
+                            
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <p>SKU: G-HS-119</p>
+                            </div>
+                            <div>
+                                <ul class="computer-featured-list">
+                                    <li>
+                                        <div class="computer-info-list">
+                                            <div>CPU/Processor:</div>
+                                            <div>x5 3100f Gaming</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="computer-info-list">
+                                            <div>Video Graphics Card:</div>
+                                            <div>CMP k7500 Gaming</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="computer-info-list">
+                                            <div>Powered by:</div>
+                                            <div>KJH Gaming Services</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Footer-->
         <footer class="footer bg-dark">
@@ -85,13 +198,35 @@
         <!-- jQuery JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- Custom JS -->
-        <script src="js/global.js"></script>
+        <!-- <script src="js/global.js"></script> -->
+
+        <!-- Slider JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         <script>
             $(document).ready(function () {
                 // const retrievedObject = localStorage.getItem('globalCart');
                 // const retrievedObjectParse = JSON.parse(retrievedObject);
                 // console.log(retrievedObjectParse);
+
+                // The slider being synced must be initialized first
+                $('#carousel').flexslider({
+                    animation: "slide",
+                    controlNav: false,
+                    animationLoop: false,
+                    slideshow: false,
+                    itemWidth: 210,
+                    itemMargin: 5,
+                    asNavFor: '#slider'
+                });
+                
+                $('#slider').flexslider({
+                    animation: "slide",
+                    controlNav: false,
+                    animationLoop: false,
+                    slideshow: false,
+                    sync: "#carousel"
+                });
             });
         </script>
     </body>
