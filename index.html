@@ -27,7 +27,7 @@
                     <button class="btn btn-outline-secondary rounded-0"> <i class="fa-solid fa-cart-shopping"></i> <span id="productCount">0</span></button>
                     <div class="cart-menu-div">
                         <div class="cart-menu-short">
-                            <div class="cart-menu-product">
+                            <!-- <div class="cart-menu-product">
                                 <div class="cart-menu-product-img">
                                     <img class="img-fluid" src="assets/product-images/11/1.webp" alt="">
                                 </div>
@@ -41,14 +41,28 @@
                                     <button class="btn"><i class="fa-solid fa-trash"></i></button>
                                 </div>
                             </div>
+                            <div class="cart-menu-product">
+                                <div class="cart-menu-product-img">
+                                    <img class="img-fluid" src="assets/product-images/11/1.webp" alt="">
+                                </div>
+                                <div class="cart-menu-product-name">
+                                    ABMX Eien Xyzen 5 3100
+                                </div>
+                                <div class="cart-menu-product-count">
+                                    1 item
+                                </div>
+                                <div class="cart-menu-product-trash">
+                                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </div> -->
                             <hr>
                             <div class="cart-link">
                                 <span>Total $450</span> <a href="" class="btn btn-dark">Checkout <i class="fa-solid fa-square-up-right"></i></a>
                             </div>
                         </div>
-                        <!-- <div class="cart-menu-empty">
+                        <div class="cart-menu-empty">
                             Empty
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 
@@ -186,14 +200,14 @@
         <script>
             $(document).ready(function () {
 
-                $('.menu-relative').hover(function () {
-                        // over
-                        $('.cart-menu-div').fadeIn();
-                    }, function () {
-                        // out
-                        $('.cart-menu-div').fadeOut();
-                    }
-                );
+                // $('.menu-relative').hover(function () {
+                //         // over
+                //         $('.cart-menu-div').fadeIn();
+                //     }, function () {
+                //         // out
+                //         $('.cart-menu-div').fadeOut();
+                //     }
+                // );
                     
 
                 for (let i = 0; i < productsData.length; ++i) {
@@ -201,7 +215,7 @@
                             '<div class="card" data-id="'+ productsData[i]['id'] +'">'+ 
                                 '<img class="card-img-top" src="'+ productsData[i]['productImages'][1] +'" alt="product_img">'+
                                 '<div class="card-body">'+
-                                    '<a href="##" class="card-title">'+ productsData[i]['title'] +'</a>'+
+                                    '<a href="product.html?id=' + productsData[i]['id'] + '" class="card-title">'+ productsData[i]['title'] +'</a>'+
                                     '<span class="sku">'+ productsData[i]['sku'] +'</span>'+
                                     '<div class="card-price">'+
                                         '<div class="current-price '+ (productsData[i]['discount'] > 0 ? 'text-discount' : "" ) +'">$'+ productsData[i]['money'] +'</div>'+
@@ -260,6 +274,7 @@
                     var searchResult = productsData.find(p=> p.id == selectItem);
                     // ++retrievedObjectParse.length;
                     setCart(searchResult);
+                    updateCartMiniView();
                     // console.log(retrievedObjectParse);
                 });
 
@@ -271,6 +286,19 @@
                     localStorage.setItem("name", "Jack Sparrow");
                     console.log(localStorage.getItem("name"));
                 });
+
+                const cart = getCartData();
+                $('#productCount').text(cart.length);
+
+
+                updateCartMiniView();
+
+                // if(cart.length === 0)
+                // {
+                //     $('.cart-menu-short').hide();
+                //     $('.cart-menu-empty').show();
+                // }
+
             });
         </script>
     </body>

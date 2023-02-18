@@ -68,20 +68,101 @@ let productsData =
         }
     ]
 
-window.sessionStorage.setItem("productsData", JSON.stringify(productsData));
+let _products = window.sessionStorage.getItem("productsData");
 
-const globalCart = [];
+if(_products === null)
+{
+    window.sessionStorage.setItem("productsData", JSON.stringify(productsData));
+}
+
+try {
+    _products = JSON.parse(_products);
+} catch (error) {
+    window.sessionStorage.setItem("productsData", JSON.stringify(productsData));
+}
+
+function getCartData()
+{
+    let _cart = window.sessionStorage.getItem("globalCart");
+
+    if(_cart === null)
+    {
+        _cart = [];
+    }
+    else
+    {
+        try {
+            _cart = JSON.parse(_cart);
+        } catch (error) {
+            _cart = [];
+        }
+    }
+
+    return _cart;
+}
+
+// const globalCart = [];
 function setCart(searchResult) {
     // console.log(searchResult);
-    globalCart.push(searchResult);
+    const cart = getCartData();
+    cart.push(searchResult);
     // console.log(globalCart);
-    window.sessionStorage.setItem("globalCart", JSON.stringify(globalCart));
+    window.sessionStorage.setItem("globalCart", JSON.stringify(cart));
 
-    const retrievedObject = sessionStorage.getItem('globalCart');
-    const retrievedObjectParse = JSON.parse(retrievedObject);
-    const lenghtObjects = Object.keys(retrievedObjectParse).length
+    // const retrievedObject = sessionStorage.getItem('globalCart');
+    // const retrievedObjectParse = JSON.parse(retrievedObject);
+    // const lenghtObjects = Object.keys(retrievedObjectParse).length
+
     // console.log(lenghtObjects);
-    $('#productCount').text(lenghtObjects);
+    $('#productCount').text(cart.length);
+}
+
+function groupCartByProductId()
+{
+    const cart = getCartData();
+    const groupById = cart.reduce((group, product) => {
+        const { id } = product;
+        group[id] = group[id] ?? [];
+        group[id].push(product);
+        return group;
+      }, {});
+
+    return groupById;
+}
+
+function updateCartMiniView()
+{
+    $('.cart-menu-short').html('');
+    
+    let groupedCart = groupCartByProductId();
+    for (const property in groupedCart) {
+        let groupedProduct = groupedCart[property];
+
+        let product = groupedProduct[0];
+
+        let items = (groupedProduct.length > 1 ? 'items' : 'item');
+
+        items = groupedProduct.length + ' ' + items;
+
+        $('.cart-menu-short').append
+        ('\
+            <div class="cart-menu-product">\
+                <div class="cart-menu-product-img"> \
+                    <img class="img-fluid" src="assets/product-images/11/1.webp" alt="">\
+                </div>\
+                <div class="cart-menu-product-name">\
+                    ' + product.title + ' \
+                </div>\
+                <div class="cart-menu-product-count">\
+                    ' + items + ' \
+                </div>\
+                <div class="cart-menu-product-trash">\
+                    <button class="btn"><i class="fa-solid fa-trash"></i></button>\
+                </div>\
+            </div>'
+        );
+        // console.log(groupedProduct[0].title);
+    }
 }
 
 
