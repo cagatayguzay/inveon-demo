@@ -3,8 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
         <title>Lorem Ipsum | Category Page</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -22,46 +20,16 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light sticky-top box-shadow-d">
             <div class="container">
-                <a class="navbar-brand" href="#!"><span>Lorem</span><span>Ipsum</span></a>
+                <div class="d-flex align-items-center">
+                    <a class="navbar-brand" href="index.html"><span>Lorem</span><span>Ipsum</span></a>
+                    <a class="cat-page _active" href="index.html"> <i class="fa fa-home"></i> Home</a>
+                </div>
                 <div class="menu-relative">
-                    <button class="btn btn-outline-secondary rounded-0"> <i class="fa-solid fa-cart-shopping"></i> <span id="productCount">0</span></button>
+                    <button class="btn btn-outline-secondary rounded-0 cart-menu-btn"> <i class="fa-solid fa-cart-shopping"></i> <span id="productCount">0</span></button>
                     <div class="cart-menu-div">
+                        <div class="cart-menu-close"><i class="fa-solid fa-x"></i></div>
                         <div class="cart-menu-short">
-                            <!-- <div class="cart-menu-product">
-                                <div class="cart-menu-product-img">
-                                    <img class="img-fluid" src="assets/product-images/11/1.webp" alt="">
-                                </div>
-                                <div class="cart-menu-product-name">
-                                    ABMX Eien Xyzen 5 3100
-                                </div>
-                                <div class="cart-menu-product-count">
-                                    1 item
-                                </div>
-                                <div class="cart-menu-product-trash">
-                                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </div>
-                            <div class="cart-menu-product">
-                                <div class="cart-menu-product-img">
-                                    <img class="img-fluid" src="assets/product-images/11/1.webp" alt="">
-                                </div>
-                                <div class="cart-menu-product-name">
-                                    ABMX Eien Xyzen 5 3100
-                                </div>
-                                <div class="cart-menu-product-count">
-                                    1 item
-                                </div>
-                                <div class="cart-menu-product-trash">
-                                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </div> -->
-                            <hr>
-                            <div class="cart-link">
-                                <span>Total $450</span> <a href="" class="btn btn-dark">Checkout <i class="fa-solid fa-square-up-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="cart-menu-empty">
-                            Empty
+                            
                         </div>
                     </div>
                 </div>
@@ -84,73 +52,7 @@
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
             <div class="container">
-                <!-- <div class="row">
-                    <div class="col-5 col-lg-3">
-                         <div>
-                            <button id="getData" class="btn btn-primary">Data Getir</button>
-                         </div>
-                    </div>
-                    <div class="col-7 col-lg-9">
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="https://picsum.photos/id/1/200/300" alt="product_img">
-                                    <div class="card-body">
-                                        <a href="##" class="card-title">ABMX Eien Xyzen 5 3100</a>
-                                        <span class="sku">SKU: G-HS-119</span>
-                                        <div class="card-price">
-                                            <div class="current-price">
-                                                $900
-                                            </div>
-                                            <div class="discount-price">
-                                                $810
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <ul class="computer-featured-list">
-                                                <li>
-                                                    <div class="computer-info-list">
-                                                        <div>
-                                                            CPU/Processor:
-                                                        </div>
-                                                        <div>
-                                                            x5 3100f Gaming
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="computer-info-list">
-                                                        <div>
-                                                            Video Graphics Card:
-                                                        </div>
-                                                        <div>
-                                                            CMP k7500 Gaming
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="computer-info-list">
-                                                        <div>
-                                                            Powered by:
-                                                        </div>
-                                                        <div>
-                                                            KJH Gaming Services
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            
-                                        </div>
-                                        <div class="text-center">
-                                            <button class="btn btn-primary card-add-btn"><i class="fa-solid fa-cart-plus"></i> Add Cart</button>
-                                        </div>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
+                
                 <div class="row" id="productRow">
  
                 </div>
@@ -199,47 +101,39 @@
 
         <script>
             $(document).ready(function () {
-
-                // $('.menu-relative').hover(function () {
-                //         // over
-                //         $('.cart-menu-div').fadeIn();
-                //     }, function () {
-                //         // out
-                //         $('.cart-menu-div').fadeOut();
-                //     }
-                // );
-                    
-
+                // Render Products
                 for (let i = 0; i < productsData.length; ++i) {
                     $(  '<div class="col-12 col-lg-4 responsive-mb">'+
                             '<div class="card" data-id="'+ productsData[i]['id'] +'">'+ 
-                                '<img class="card-img-top" src="'+ productsData[i]['productImages'][1] +'" alt="product_img">'+
+                                '<a href="product.html?id=' + productsData[i]['id'] + '">'+
+                                    '<img class="card-img-top" src="'+ productsData[i]['productImages'][0] +'" alt="product_img">'+
+                                '</a>'+
                                 '<div class="card-body">'+
                                     '<a href="product.html?id=' + productsData[i]['id'] + '" class="card-title">'+ productsData[i]['title'] +'</a>'+
                                     '<span class="sku">'+ productsData[i]['sku'] +'</span>'+
                                     '<div class="card-price">'+
-                                        '<div class="current-price '+ (productsData[i]['discount'] > 0 ? 'text-discount' : "" ) +'">$'+ productsData[i]['money'] +'</div>'+
+                                        '<div class="current-price '+ (productsData[i]['discount'] > 0 ? 'text-discount' : "" ) +'">$'+ productsData[i]['price'] +'</div>'+
                                         (productsData[i]['discount'] > 0 ? '<div class="save-price">save %'+ productsData[i]['discount'] +'</div>': '') +
-                                        (productsData[i]['discount'] > 0 ? '<div class="discount-price">$'+ (productsData[i]['money'] - ((productsData[i]['money']*productsData[i]['discount'])/100)) +'</div>': '') +
+                                        (productsData[i]['discount'] > 0 ? '<div class="discount-price">$'+ (productsData[i]['price'] - ((productsData[i]['price']*productsData[i]['discount'])/100)) +'</div>': '') +
                                     '</div>'+
                                     '<div>'+
                                         '<ul class="computer-featured-list">'+
                                             '<li>'+
                                                 '<div class="computer-info-list">'+
                                                     '<div>CPU/Processor:</div>'+
-                                                    '<div>'+ productsData[i]['info'][1] +'</div>'+
+                                                    '<div>'+ productsData[i]['features'][1] +'</div>'+
                                                 '</div>'+
                                             '</li>'+
                                             '<li>'+
                                                 '<div class="computer-info-list">'+
                                                     '<div>Video Graphics Card:</div>'+
-                                                    '<div>'+ productsData[i]['info'][2] +'</div>'+
+                                                    '<div>'+ productsData[i]['features'][2] +'</div>'+
                                                 '</div>'+
                                             '</li>'+
                                             '<li>'+
                                                 '<div class="computer-info-list">'+
                                                     '<div>Powered by:</div>'+
-                                                    '<div>'+ productsData[i]['info'][3] +'</div>'+
+                                                    '<div>'+ productsData[i]['features'][3] +'</div>'+
                                                 '</div>'+
                                             '</li>'+
                                         '</ul>'+
@@ -250,55 +144,63 @@
                         '</div>').appendTo('#productRow');
                 }
 
-
-                // var globalCart = [];
-                // $('.card-add-btn').click(function (e) { 
-                //     e.preventDefault();
-
-                //     var selectItem = $(this).data('id');
-                //     var searchResult = computerData.find(p=> p.id == selectItem);
-                //     globalCart.push(searchResult);
-
-                //     window.localStorage.setItem("globalCart", JSON.stringify(globalCart));
-                //     var retrievedObject = localStorage.getItem('globalCart');
-                //     console.log('cartStorage: ', JSON.parse(retrievedObject));
-
-                //     // console.log(localStorageData);
-                // });
-
-
-                $('.card-add-btn').click(function (e) { 
-                    e.preventDefault();
-
-                    var selectItem = $(this).data('id');
-                    var searchResult = productsData.find(p=> p.id == selectItem);
-                    // ++retrievedObjectParse.length;
-                    setCart(searchResult);
-                    updateCartMiniView();
-                    // console.log(retrievedObjectParse);
-                });
-
-
-
-                $('#getData').click(function (e) { 
-                    e.preventDefault();
-
-                    localStorage.setItem("name", "Jack Sparrow");
-                    console.log(localStorage.getItem("name"));
-                });
-
+                // Get Cart Data
                 const cart = getCartData();
                 $('#productCount').text(cart.length);
-
-
                 updateCartMiniView();
 
-                // if(cart.length === 0)
-                // {
-                //     $('.cart-menu-short').hide();
-                //     $('.cart-menu-empty').show();
-                // }
+                // Cart Menu
+                $('.cart-menu-btn').click(function (e) { 
+                    e.preventDefault();
+                    if ($(window).width() < 960) {
+                        window.location.href = 'order-cart.html';
+                    }else{
+                        $('.cart-menu-div').show();
+                    }
+                });
 
+                // Cart Menu
+                $('.cart-menu-close').click(function (e) { 
+                    e.preventDefault();
+                    $('.cart-menu-div').hide();
+                });
+
+                // Add Cart Item
+                $('.card-add-btn').click(function (e) { 
+                    e.preventDefault();
+                    var selectItem = $(this).data('id');
+                    var searchResult = productsData.find(p=> p.id == selectItem);
+                    setCart(searchResult);
+                    updateCartMiniView();
+                });
+
+                // Remove Cart Item
+                $('body').on('click','.product-trash-btn',function(e){
+                    e.preventDefault();
+                    var removeItem = $(this).data('id');
+                    var searchResult = getCartData().find(p=> p.id == removeItem);
+                    // console.log(searchResult.id);
+                    removeItemId = searchResult.id;
+                    // console.log(getCartData());
+                    const cart = getCartData();
+                    
+                    removeObjectWithId(cart, removeItemId);
+
+                    window.sessionStorage.setItem("globalCart", JSON.stringify(cart));
+                    $('#productCount').text(cart.length);
+                    updateCartMiniView();
+                });
+
+                function removeObjectWithId(cart, removeItemId) {
+                    const objWithIdIndex = cart.findIndex((obj) => obj.id === removeItemId);
+
+                    if (objWithIdIndex > -1) {
+                        cart.splice(objWithIdIndex, 1);
+                    }
+
+                    return cart;
+                }
+                
             });
         </script>
     </body>

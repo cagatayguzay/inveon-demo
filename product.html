@@ -3,8 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
         <title>Lorem Ipsum | Product Page</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -26,12 +24,16 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light sticky-top box-shadow-d">
             <div class="container">
-                <a class="navbar-brand" href="#!"><span>Lorem</span><span>Ipsum</span></a>
+                <div class="d-flex align-items-center">
+                    <a class="navbar-brand" href="index.html"><span>Lorem</span><span>Ipsum</span></a>
+                    <a class="cat-page" href="index.html"> <i class="fa fa-home"></i> Home</a>
+                </div>
                 <div class="menu-relative">
-                    <button class="btn btn-outline-secondary rounded-0"> <i class="fa-solid fa-cart-shopping"></i> <span id="productCount">0</span></button>
+                    <button class="btn btn-outline-secondary rounded-0 cart-menu-btn"> <i class="fa-solid fa-cart-shopping"></i> <span id="productCount">0</span></button>
                     <div class="cart-menu-div">
-                        <div>
-                            Empty
+                        <div class="cart-menu-close"><i class="fa-solid fa-x"></i></div>
+                        <div class="cart-menu-short">
+                            
                         </div>
                     </div>
                 </div>
@@ -55,62 +57,19 @@
         <section class="container mt-2">
             <div class="row">
                 <div class="col-12 col-lg-8">
+                    <div class="skeleton-img">
+                        <div>
+
+                        </div>
+                    </div>
                     <!-- Place somewhere in the <body> of your page -->
                     <div id="slider" class="flexslider main-image">
                         <ul class="slides">
-                            <!-- <li>
-                                <img src="assets/product-images/3/1.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/2.webp" />
-                            </li> -->
-                            <!-- <li>
-                                <img src="assets/product-images/3/3.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/4.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/5.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/6.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/7.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/8.webp" />
-                            </li> -->
                             <!-- items mirrored twice, total of 12 -->
                         </ul>
                     </div>
                     <div id="carousel" class="flexslider thumbnail-image">
                         <ul class="slides">
-                            <!-- <li>
-                                <img src="assets/product-images/3/1.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/2.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/3.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/4.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/5.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/6.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/7.webp" />
-                            </li>
-                            <li>
-                                <img src="assets/product-images/3/8.webp" />
-                            </li> -->
                         <!-- items mirrored twice, total of 12 -->
                         </ul>
                     </div>
@@ -118,42 +77,23 @@
                 <div class="col-12 col-lg-4">
                     <div class="card product-card">
                         <div class="card-header">
-                            <h4 class="product-title">ABMX Eien Xyzen 5 3100</h4>
+                            <h4 class="product-title"></h4>
                             <div class="product-price">
-                                <p class="current-price text-discount">$500</p>
-                                <p class="save-price mb-0">save %10</p>
-                                <p class="discount-price">$450</p>
+                                
                             </div>
                             
                         </div>
                         <div class="card-body">
                             <div>
-                                <p>SKU: G-HS-119</p>
+                                <p class="sku"></p>
                             </div>
                             <div>
                                 <ul class="computer-featured-list">
-                                    <li>
-                                        <div class="computer-info-list">
-                                            <div>CPU/Processor:</div>
-                                            <div>x5 3100f Gaming</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="computer-info-list">
-                                            <div>Video Graphics Card:</div>
-                                            <div>CMP k7500 Gaming</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="computer-info-list">
-                                            <div>Powered by:</div>
-                                            <div>KJH Gaming Services</div>
-                                        </div>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Add To Cart</button>
+                                <button class="btn btn-primary" id="productAddBtn"><i class="fa-solid fa-cart-plus"></i> Add To Cart</button>
                             </div>
                         </div>
                     </div>
@@ -205,25 +145,60 @@
         <script src="js/global.js"></script>
 
         <script>
+
+            // Render Product
             function renderProduct(product)
             {
                 $('.product-title').text(product.title);
-
-                $('ul.slides').append('                            <li> \
-                                <img src="assets/product-images/3/1.webp" />\
-                            </li>\
-                            <li>\
-                                <img src="assets/product-images/3/2.webp" />\
-                            </li>'
+                const imgLength = Object.keys(product.productImages).length;
+                for (let i = 0; i < imgLength; ++i){
+                    $('ul.slides').append
+                    (
+                        '<li>'+
+                            '<img src="'+ product['productImages'][i] +'" />'+
+                        '</li>'
+                    );
+                }
+                
+                $('.product-price').append
+                (
+                    '<p class="current-price '+ (product['discount'] > 0 ? 'text-discount' : "" ) +'">$'+ product['price'] +'</p>'+
+                    (product['discount'] > 0 ? '<p class="save-price mb-0">save %'+ product['discount'] +'</p>': '') +
+                    (product['discount'] > 0 ? '<p class="discount-price">$'+ (product['price'] - ((product['price']*product['discount'])/100)) +'</p>': '')
                 );
+
+                $('.sku').text(product.sku);
+
+                $('.computer-featured-list').append
+                (
+                    '<li>'+
+                        '<div class="computer-info-list">'+
+                            '<div>CPU/Processor:</div>'+
+                            '<div>'+ product.features[1] +'</div>'+
+                        '</div>'+
+                    '</li>'+
+                    '<li>'+
+                        '<div class="computer-info-list">'+
+                            '<div>Video Graphics Card:</div>'+
+                            '<div>'+ product.features[2] +'</div>'+
+                        '</div>'+
+                    '</li>'+
+                    '<li>'+
+                        '<div class="computer-info-list">'+
+                            '<div>Powered by:</div>'+
+                            '<div>'+ product.features[3] +'</div>'+
+                        '</div>'+
+                    '</li>'
+                );
+                
                 setupSliders().then(() => {
-                    console.log('loaded');
+                    $('.skeleton-img').remove();  
                 });
                         
                 
             }
 
-
+            // Setup IMG Gallery
             function setupSliders() {
                 return new Promise(function(resolve, reject) {
                     setTimeout(() => {
@@ -246,21 +221,18 @@
                         });
 
                         resolve();
-                    }, 2000);
+                    }, 1000);
                 });
             }
 
             $(document).ready(function () {
-                // const retrievedObject = localStorage.getItem('globalCart');
-                // const retrievedObjectParse = JSON.parse(retrievedObject);
-                // console.log(retrievedObjectParse);
 
-                // The slider being synced must be initialized first
-
+                // get URL id
                 const queryString = window.location.search;
                 const urlParams = new URLSearchParams(queryString);
                 let productId = urlParams.get('id');
 
+                // check product
                 if(productId !== null)
                 {
                     productId = parseInt(productId);
@@ -289,10 +261,57 @@
                 }
 
 
+                // Get Cart Data
+                const cart = getCartData();
+                $('#productCount').text(cart.length);
+                updateCartMiniView();
+
+                $('.cart-menu-btn').click(function (e) { 
+                    e.preventDefault();
+                    $('.cart-menu-div').show();
+                });
+
+                $('.cart-menu-close').click(function (e) { 
+                    e.preventDefault();
+                    $('.cart-menu-div').hide();
+                });
+
+                // Add Cart Product
+                $('#productAddBtn').click(function (e) { 
+                    e.preventDefault();
+                    var searchResult = productsData.find(p=> p.id == productId);
+                    setCart(searchResult);
+                    updateCartMiniView();
+                });
 
 
+                // Remove Cart Item
+                $('body').on('click','.product-trash-btn',function(e){
+                    e.preventDefault();
+                    var removeItem = $(this).data('id');
+                    var searchResult = getCartData().find(p=> p.id == removeItem);
+                    // console.log(searchResult.id);
+                    removeItemId = searchResult.id;
+                    // console.log(getCartData());
+                    const cart = getCartData();
+                    
+                    removeObjectWithId(cart, removeItemId);
 
-                
+                    window.sessionStorage.setItem("globalCart", JSON.stringify(cart));
+                    $('#productCount').text(cart.length);
+                    updateCartMiniView();
+                });
+
+                function removeObjectWithId(cart, removeItemId) {
+                    const objWithIdIndex = cart.findIndex((obj) => obj.id === removeItemId);
+
+                    if (objWithIdIndex > -1) {
+                        cart.splice(objWithIdIndex, 1);
+                    }
+
+                    return cart;
+                }
+
             });
         </script>
     </body>
